@@ -1,13 +1,9 @@
+from read_input import read_input
 from collections import namedtuple
 
 DAY = 3
 
 Number = namedtuple('number', ['start', 'end'])
-
-
-def read_input(number: int) -> list[str]:
-    with open(f"input/{number}") as f:
-        return f.readlines()
 
 
 def part1() -> int:

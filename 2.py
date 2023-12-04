@@ -1,14 +1,11 @@
+from read_input import read_input
+
 DAY: int = 2
 CUBE_COUNTS: dict[str, int] = {
     'red': 12,
     'green': 13,
     'blue': 14
 }
-
-
-def read_input(number: int) -> list[str]:
-    with open(f"input/{number}") as f:
-        return f.readlines()
 
 
 def part1() -> int:

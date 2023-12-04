@@ -1,7 +1,10 @@
-def main():
-    with open("input/1") as f:
-        lines = f.readlines()
+from read_input import read_input
 
+DAY = 1
+
+
+def main():
+    lines = read_input(DAY)
     digits = {
         "one": 'one1one',
         "two": 'two2two',
