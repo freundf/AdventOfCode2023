@@ -9,7 +9,7 @@ def part1() -> int:
     result = 0
     for line in lines:
         card_num, (play_nums, winning_nums) = split_card(line)
-        hits = set(play_nums).intersection(set(winning_nums))
+        hits = set(play_nums) & set(winning_nums)
         if len(hits) > 0:
             result += pow(2, len(hits) - 1)
     return result
