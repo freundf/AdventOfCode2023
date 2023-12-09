@@ -16,11 +16,11 @@ def part2() -> int:
 
 
 def part1_2_oneliner() -> None:
-    print(*[(lambda x: sum((f := lambda s: 0 if sum(s) == 0 else s[-1] + f([s[i] - s[i - 1] for i in range(1, len(s))]))(sequence) for sequence in [[int(n) for n in line.split(' ')[::x]] for line in open("input/9")]))(direction) for direction in [1, -1]], sep='\n')
+    print(*[(lambda x: sum((f := lambda s: 0 if all(n == 0 for n in s) else s[-1] + f([s[i] - s[i - 1] for i in range(1, len(s))]))(sequence) for sequence in [[int(n) for n in line.split(' ')[::x]] for line in open("input/9")]))(direction) for direction in [1, -1]], sep='\n')
 
 
 def calc_next_num(sequence: list[int]) -> int:
-    if sum(sequence) == 0:
+    if all(n == 0 for n in sequence):
         return 0
     sequence_next = [sequence[i] - sequence[i - 1] for i in range(1, len(sequence))]
     return sequence[-1] + calc_next_num(sequence_next)
